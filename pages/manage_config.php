@@ -48,8 +48,24 @@ $config   = plugin_config_get("config");
 	</td>
 </tr>
 <tr <?php echo helper_alternate_class( )?>>
-        <td><?php echo plugin_lang_get( 'config' ) ?></td>
-        <td colspan="2"><textarea name="config" cols="50" rows="50"><?php var_export($config)?></textarea></td>
+        <td><?php echo plugin_lang_get( 'host' ) ?></td>
+        <td colspan="2"><input type="text" name="host" cols="10" rows="1" value="canospsis.domain.com"></td>
+</tr>
+<tr <?php echo helper_alternate_class( )?>>
+        <td><?php echo plugin_lang_get( 'port' ) ?></td>
+        <td colspan="2"><input type="text" name="port" cols="10" rows="1" value="5672"></td>
+</tr><tr <?php echo helper_alternate_class( )?>>
+        <td><?php echo plugin_lang_get( 'user' ) ?></td>
+        <td colspan="2"><input type="text" name="user" cols="10" rows="1" value="guest"></td>
+</tr><tr <?php echo helper_alternate_class( )?>>
+        <td><?php echo plugin_lang_get( 'password' ) ?></td>
+        <td colspan="2"><input type="text" name="password" cols="10" rows="1" value="guest"></td>
+</tr><tr <?php echo helper_alternate_class( )?>>
+        <td><?php echo plugin_lang_get( 'vhost' ) ?></td>
+        <td colspan="2"><input type="text" name="vhost" cols="10" rows="1" value="canopsis"></td>
+</tr><tr <?php echo helper_alternate_class( )?>>
+        <td><?php echo plugin_lang_get( 'exchange' ) ?></td>
+        <td colspan="2"><input type="text" name="exchange" cols="10" rows="1" value="canopsis.events"></td>
 </tr>
 <tr>
 	<td class="center" width="100%" colspan="3">

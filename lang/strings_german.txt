@@ -1,0 +1,11 @@
+<?php
+$s_plugin_EmailEventStatus_plugin_title = 'Email Event Status reporting';
+$s_plugin_EmailEventStatus_plugin_description = 'Bietet die Funktionalität bei verschiedenen Events benachrichtet zu werden. <br />Support: mantis (at) initos.com';
+$s_plugin_EmailEventStatus_plugin_author = 'Tobias Kalbitz for initOS GmbH & Co. KG';
+$s_plugin_EmailEventStatus_exclude_reporter = 'Schließe Reporter aus';
+$s_plugin_EmailEventStatus_exclude_handler  = 'Schließe Bearbeiter aus';
+$s_plugin_EmailEventStatus_config = 'Konfiguration';
+$s_plugin_EmailEventStatus_config_no_array = 'Konfiguration ist kein Array.';
+$s_plugin_EmailEventStatus_yes = 'Ja';
+$s_plugin_EmailEventStatus_no  = 'Nein';
+?>

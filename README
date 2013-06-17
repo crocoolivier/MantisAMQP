@@ -1,0 +1,7 @@
+At the moment only new bug messages will be send. The configuration syntax is: 
+
+array (
+  1 => array ( 'user1', 'user2',),
+)
+
+The number 1 is the project_id, the user are the user that will be notified.

@@ -27,7 +27,18 @@ class MantisAmqpPlugin extends MantisPlugin
 	    'EVENT_UPDATE_BUG' => 'report_bug',
         );
     }
-    
+    function config() {
+        return array(
+	'activate' => OFF,
+        'host'     => array(),
+        'port'     => array(),
+        'user'     => array(),
+        'password' => array(),
+        'vhost'    => array(),
+        'exchange' => array(),
+        );
+    }   
+ 
     
     function report_bug($p_event, $bug_data, $bug_id)
     {

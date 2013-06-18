@@ -1,6 +1,6 @@
-# AMQP Support for Mantis
+# AMQP Plugin for Mantis
 
-*  https://github.com/...
+*  https://github.com/crocoolivier/MantisAMQP
 
 ---
 
@@ -9,6 +9,7 @@
 * GitHub
 
 ## Install
+install php-bcmath package
 
 ### Getting code
 

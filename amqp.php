@@ -1,4 +1,5 @@
 <?php
+require_once( config_get( 'class_path' ) . 'MantisPlugin.class.php' );
 require_once __DIR__.'/vendor/autoload.php';
 
 use PhpAmqpLib\Connection\AMQPConnection;
@@ -7,12 +8,15 @@ use PhpAmqpLib\Message\AMQPMessage;
 
 function amqp($connector_name,$component,$resource,$state,$state_type,$output,$display_name){
 // Configurations
-$host = "172.17.6.203";
-$port = 5672;
-$user = "guest";
-$pass = "guest";
-$vhost = "canopsis";
-$exchange = "canopsis.events";
+
+$host = plugin_config_get( 'host' );
+$port = plugin_config_get( 'port' );
+$user = plugin_config_get( 'user' );
+$pass = plugin_config_get( 'password' );
+$vhost = plugin_config_get( 'vhost' );
+$exchange = plugin_config_get( 'exchange' );
+$activate = plugin_config_get( 'activate' );
+
 
 // Connection
 $conn = new AMQPConnection($host, $port, $user, $pass, $vhost);
@@ -34,7 +38,9 @@ $msg_body = array(
 	"state"			=> $state,
 	"state_type"		=> $state_type,
 	"output"		=> $output,
-	"display_name"		=> $display_name
+	"display_name"		=> $display_name,
+	'connection_timeout' 	=> 10,
+        'read_write_timeout' 	=> 3
 );
 $msg_raw = json_encode($msg_body);
 
@@ -50,7 +56,10 @@ echo "Routing-key: " . $msg_rk . "\n";
 $msg = new AMQPMessage($msg_raw, array('content_type' => 'application/json', 'delivery_mode' => 2));
 
 // Publish Event
-$ch->basic_publish($msg, $exchange, $msg_rk);
+echo $activate;
+if ($activate == "1"){
+	$ch->basic_publish($msg, $exchange, $msg_rk);
+}
 
 // Close connection
 $ch->close();

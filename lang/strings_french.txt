@@ -1,0 +1,14 @@
+<?php
+$s_plugin_MantisAmqp_plugin_title = 'MantisAMQP';
+$s_plugin_MantisAmqp_plugin_description = 'Permet à Mantis d'envoyer des évènements à un serveur AMQP tel que Canopsis';
+$s_plugin_MantisAmqp_plugin_author = 'Olivier L';
+$s_plugin_MantisAmqp_activate = 'Activer les échanges AMQP';
+$s_plugin_MantisAmqp_host = 'IP du serveur AMQP';
+$s_plugin_MantisAmqp_port = 'Port';
+$s_plugin_MantisAmqp_user = 'Utilisateur';
+$s_plugin_MantisAmqp_password = 'Mot de passe';
+$s_plugin_MantisAmqp_vhost = 'Vhost';
+$s_plugin_MantisAmqp_exchange = 'Exchange';
+$s_plugin_MantisAmqp_yes = 'Oui';
+$s_plugin_MantisAmqp_no  = 'Non';
+?>

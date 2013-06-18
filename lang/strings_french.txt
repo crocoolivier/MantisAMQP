@@ -12,4 +12,8 @@ $s_plugin_MantisAmqp_exchange = 'Exchange';
 $s_plugin_MantisAmqp_yes = 'Oui';
 $s_plugin_MantisAmqp_no  = 'Non';
 $s_plugin_MantisAmqp_submit  = 'Envoyer';
+$s_plugin_MantisAmqp_reporter  = 'Rapporteur';
+$s_plugin_MantisAmqp_title  = 'Descr';
+$s_plugin_MantisAmqp_bug  = 'Bug';
+
 ?>

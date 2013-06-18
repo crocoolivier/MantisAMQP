@@ -1,7 +1,34 @@
-At the moment only new bug messages will be send. The configuration syntax is: 
+# AMQP Support for Mantis
 
-array (
-  1 => array ( 'user1', 'user2',),
-)
+*  https://github.com/...
 
-The number 1 is the project_id, the user are the user that will be notified.
+---
+
+## Supporting services
+
+* GitHub
+
+## Install
+
+### Getting code
+
+Download zip or git clone on your server.
+
+Copy MantisAmq folder in plugins folder
+Make sure folder name is "MantisAmq"
+Go to Manage interface and install the plugin.
+
+## Config
+Clic on "MantisAmq 0.1" and configure your AMQP Server
+
+Exemple for Canopsis :
+Activate Amqp report: 	Yes
+AMQP Server IP: 	192.168.0.1
+Port: 	5672
+User: 	guest
+Password: guest	
+Vhost: 	canopsis
+Exchange:  canopsis.events	
+	
+
+

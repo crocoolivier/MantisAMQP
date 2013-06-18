@@ -23,25 +23,16 @@ class MantisAmqpPlugin extends MantisPlugin
     function hooks()
     {
         return array(
-            'EVENT_REPORT_BUG' => 'report_bug'
+            'EVENT_REPORT_BUG' => 'report_bug',
+	    'EVENT_UPDATE_BUG' => 'report_bug',
         );
     }
     
-    function config()
-    {
-        return array(
-            'exclude_reporter' => ON,
-            'exclude_handler' => ON,
-            'config' => array()
-        );
-    }
     
     function report_bug($p_event, $bug_data, $bug_id)
     {
         
         
-        // Debug
-        $fp = fopen("compteur.txt", "w+");
         
         //Récupération du nom du projet
         $t_project_table  = db_get_table('mantis_project_table');
@@ -89,8 +80,10 @@ class MantisAmqpPlugin extends MantisPlugin
         if ($bug_state != "") {
             $status_amqp = get_enum_element('status', $bug_state);
         }
-        
-        amqp("Mantis", gethostname(), $status_amqp, $state_amqp, 1, "$user_name - $bug_title", "Mantis - $project_name");
+$title=plugin_lang_get('title');
+$bug=plugin_lang_get('bug');
+$reporter=plugin_lang_get('reporter');
+        amqp("Mantis", gethostname(), $status_amqp, $state_amqp, 1, "$reporter : $user_name - $title : $bug_title", "Mantis - $project_name - $bug: $bug_id");
     }
 }
 ?>

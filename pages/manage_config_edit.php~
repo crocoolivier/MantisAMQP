@@ -13,7 +13,8 @@ $f_gpc = array(
 
 foreach ( $f_gpc AS $t_key => $t_value )
 {
-
+echo "$t_key\n";
+echo $t_value;
 	if( plugin_config_get( $t_key ) != $t_value )
 	{
 		plugin_config_set( $t_key, $t_value );
